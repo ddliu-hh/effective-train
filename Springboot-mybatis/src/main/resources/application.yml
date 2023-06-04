@@ -1,0 +1,15 @@
+
+#使用mybatis需要配置数据源，就是要指明数据库是那个，表是那个，用户名密码等
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+#mybatis信息,告诉框架映射文件(xml)信息
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml  #mapper映射文件路径，这里使用了通配符，意思是mapper这个包下的所有以Mapper.xml结尾的文件都识别
+  type-aliases-package: com.example.springbootmybatis.domain #别名

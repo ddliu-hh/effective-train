@@ -1,0 +1,46 @@
+#yml多文档方式
+#利用---来划分区域，就相当与一个个profiles文档
+#yml的激活是在它内部
+
+---
+
+server:
+  port: 8084
+
+#这是这个区域的名字
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+
+
+---
+
+server:
+  port: 8085
+
+#这是这个区域的名字
+spring:
+  config:
+    activate:
+      on-profile: test
+
+
+
+---
+
+server:
+  port: 8086
+
+#这是这个区域的名字
+spring:
+  config:
+    activate:
+      on-profile: pro
+
+---
+#激活
+spring:
+  profiles:
+    active: pro

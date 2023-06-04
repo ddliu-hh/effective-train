@@ -1,0 +1,46 @@
+#注意，使用yml配置时，必须要加空格，否则数据无法识别。空格数量无所谓，只要相同层级的元素一致就行。这很重要
+
+#  YAML全称是YAML Ain't Markup Language。YAML是一种直观的能够被电脑识别的数据序列化格式，并且容易被人类阅
+#  读，容剔和脚本浯言交互的，可以被支持YAML的不同程浯言程序导，，比C/C++,Ruby,Python,Java,PerI,C#,PHP
+#  等。YML文件是以数据为核心的，比传统的xml申加简洁。
+#  YAML文件的扩展名可以使用．ym|或者．yaml.
+
+
+#YAML:基本语法
+#·大小写敏感
+# 数据值前边必须有空格，作为分隔符
+#使用缩进表示层级关系
+#缩进时不允许使用Tab键，只允许使用空格（各个系统Tab对应的空格数目可能不同，导致层次混乱）。
+#缩进的空格数目不重要，只要相同级别的元素左侧对齐即可
+#·#表示注释，从这个字符一直到行尾，都会被解析器忽略。
+
+server:
+  port: 8082
+  address: 127.0.0.1
+
+#YAML数据格式
+
+name: lbd
+#1.map:键值对集合
+#对象，这样定义了话name和age就属于person这个对象了
+person:
+  name: ${name} #lbd,参数引用，引用上边定义的name
+  age: 20
+  address:
+    - beijing
+    - shanghai
+
+#行内写法
+person2: {name: gzq,age: 20}
+
+#2.数组:一组按次序排列的值
+address:
+  - beijing
+  - shanghai
+
+#行内写法
+address2: [hainan,changan]
+
+#3.纯量：单个的，不可再分的值
+msp1: 'hello \n world' #单引号忽略转义字符
+msp2: "hello \n world" #双引号识别转义字符
